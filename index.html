@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Srijan Sanyal | Cybersecurity Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{--bg:#05080e;--card:#0b111a;--line:#1c2838;--text:#f8fafc;--muted:#91a0b4;--a:#5eead4;--blue:#60a5fa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif}
+body:before{content:"";position:fixed;inset:0;z-index:-1;opacity:.4;background-image:linear-gradient(#ffffff06 1px,transparent 1px),linear-gradient(90deg,#ffffff06 1px,transparent 1px);background-size:55px 55px}
+.wrap{width:min(1160px,calc(100% - 32px));margin:auto}a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;left:0;right:0;height:70px;background:#05080ed9;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff0d;z-index:10}.nav{height:100%;display:flex;align-items:center;justify-content:space-between}.logo{font:700 19px "Space Grotesk"}.logo i{color:var(--a);font-style:normal}.links{display:flex;gap:24px;font-size:13px;color:var(--muted);font-weight:700}.links a:hover,.links a.active{color:var(--a)}.nav button{background:none;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:12px;font-weight:700}
+.hero{padding:150px 0 100px;display:grid;grid-template-columns:1fr .85fr;gap:70px;align-items:center}.eyebrow{font-size:12px;letter-spacing:2px;color:var(--a);font-weight:700}.eyebrow:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--a);margin-right:8px}h1{font:700 clamp(52px,8vw,90px)/.9 "Space Grotesk";letter-spacing:-5px;margin:18px 0}.outline{color:transparent;-webkit-text-stroke:1px #dbe5f0}.lead{color:var(--muted);font-size:19px;line-height:1.85;max-width:640px}.buttons{display:flex;gap:10px;flex-wrap:wrap}.btn{border:1px solid var(--line);padding:12px 16px;border-radius:9px;font-size:13px;font-weight:700}.btn.primary{background:var(--a);color:#06100e;border-color:var(--a)}
+.terminal{background:#0b111a;border:1px solid var(--line);border-radius:16px;overflow:hidden}.bar{height:40px;border-bottom:1px solid var(--line);display:flex;gap:6px;align-items:center;padding:0 13px}.ball{width:8px;height:8px;border-radius:50%;background:#475569}.bar span{margin:auto;color:#657286;font:9px monospace}.terminal pre{padding:22px;margin:0;color:#9eacbe;font:12px/2 monospace}.g{color:var(--a)}.b{color:#8bb5ff}.w{color:#fff}
+section{padding:90px 0;border-top:1px solid var(--line)}.k{font-size:12px;letter-spacing:2px;color:var(--a);font-weight:700;text-transform:uppercase}.head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:35px}.head h2{font:600 46px "Space Grotesk";letter-spacing:-2px;margin:8px 0 0}.head p{max-width:390px;color:var(--muted);font-size:12px;line-height:1.7}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:65px}.copy{color:#a5b0bf;font-size:14px;line-height:1.9}.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat,.skill,.project,.cert,.edu{background:var(--card);border:1px solid var(--line);border-radius:14px}.stat{padding:19px}.stat b{font:600 27px "Space Grotesk";display:block}.stat span{font-size:10px;color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.skill{padding:22px}.skill small{color:#526177}.skill h3{font:600 16px "Space Grotesk";margin:22px 0 8px}.skill p{font-size:13px;line-height:1.8;color:var(--muted);margin:0}
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:17px}.filter{cursor:pointer;background:none;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:12px;font-weight:700}.filter.active,.filter:hover{background:var(--a);color:#06100e;border-color:var(--a)}.projects{display:grid;grid-template-columns:1fr 1fr;gap:13px}.project{padding:24px;transition:.2s}.project:hover,.cert:hover{transform:translateY(-4px);border-color:#31536a}.feature{grid-column:span 2}.phead{display:flex;justify-content:space-between;gap:15px}.project h3{font:600 22px "Space Grotesk";margin:0 0 10px}.date{font-size:9px;color:#6d7b8e;white-space:nowrap}.tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:15px}.tag{font-size:10.5px;color:#b5c2d2;padding:5px 7px;border:1px solid var(--line);border-radius:5px}.project ul{margin:0;padding-left:17px;color:var(--muted);font-size:13.5px;line-height:1.85}
+.certs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.cert{overflow:hidden;transition:.2s}.cert img{width:100%;aspect-ratio:1.45;object-fit:cover;display:block;background:#fff;cursor:pointer}.certbody{padding:14px}.type{font-size:10px;color:var(--a);font-weight:700;letter-spacing:1px;text-transform:uppercase}.cert h3{font:600 13px/1.4 "Space Grotesk";margin:8px 0}.cert p{font-size:12px;color:var(--muted);line-height:1.6;min-height:30px}.view{width:100%;background:#09111b;color:var(--text);border:1px solid var(--line);padding:10px;border-radius:7px;font-size:12px;font-weight:700;cursor:pointer}.view:hover{color:var(--a);border-color:var(--a)}
+.edu{display:grid;grid-template-columns:1.3fr .7fr;gap:13px;background:none;border:0}.ebox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}.ebox h3{font:600 19px "Space Grotesk";margin:0 0 9px}.ebox p{font-size:11.5px;color:var(--muted);line-height:1.8;margin:0}.green{color:var(--a)}
+.contact{padding:30px;background:linear-gradient(120deg,#0e1926,#091019);border:1px solid var(--line);border-radius:16px;display:flex;justify-content:space-between;align-items:center;gap:25px}.contact h2{font:600 34px "Space Grotesk";margin:0 0 7px}.contact p{font-size:13px;color:var(--muted);margin:0}.contactlinks{display:flex;gap:8px;flex-wrap:wrap}.clink{border:1px solid var(--line);padding:10px 13px;border-radius:8px;font-size:12px;font-weight:700}.clink:hover{color:var(--a);border-color:var(--a)}footer{padding:30px 0;color:#536176;font-size:10px;display:flex;justify-content:space-between}
+.modal{display:none;position:fixed;inset:0;background:#000d;backdrop-filter:blur(9px);z-index:30;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.box{max-width:1050px;width:100%;max-height:94vh;overflow:auto;background:#0b111a;border:1px solid var(--line);border-radius:14px;padding:12px}.mh{display:flex;justify-content:space-between;padding:5px 4px 12px;font:600 13px "Space Grotesk"}.close{background:none;color:#fff;border:1px solid var(--line);border-radius:7px;padding:7px 10px;cursor:pointer}.box img{width:100%;display:block;border-radius:7px;background:#fff}.hide{display:none!important}
+@media(max-width:900px){.links{display:none}.hero,.about{grid-template-columns:1fr}.skills,.certs{grid-template-columns:1fr 1fr}.projects{grid-template-columns:1fr}.feature{grid-column:auto}.edu{grid-template-columns:1fr}.contact{display:block}.contactlinks{margin-top:18px}.head{display:block}.head p{margin-top:12px}}
+@media(max-width:560px){.skills,.certs{grid-template-columns:1fr}.wrap{width:calc(100% - 24px)}h1{letter-spacing:-3px}.lead{font-size:17px}.head h2{font-size:36px}.phead{display:block}.date{display:block;margin-top:6px}}
+@media print{@page{size:A4;margin:0}nav,.modal{display:none!important}body{background:#05080e}.wrap{width:100%}section{padding:45px 0}.hero{min-height:100vh}}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.show{opacity:1;transform:none}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#63e6ff,#8b9cff);z-index:50;box-shadow:0 0 14px #63e6ff}
+@media(max-width:900px){.links{max-height:60vh;overflow:auto}}
+
+.hero-visual{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center}
+.portrait-card{position:relative;width:min(410px,90%);aspect-ratio:4/5;border:1px solid #2c425f;border-radius:28px;overflow:hidden;background:#0d192b;box-shadow:0 28px 90px rgba(0,0,0,.42),0 0 60px rgba(99,230,255,.08)}
+.portrait-card img{width:100%;height:100%;object-fit:cover;display:block}
+.portrait-glow{position:absolute;inset:auto -20% -20% -20%;height:48%;background:radial-gradient(circle,rgba(99,230,255,.18),transparent 68%);pointer-events:none}
+
+
+
+.resume-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:stretch}
+.resume-copy{border:1px solid var(--line);border-radius:18px;padding:28px;background:var(--card);display:flex;flex-direction:column;justify-content:center}
+.resume-card{display:flex;gap:16px;align-items:center;margin-bottom:24px}
+.resume-card h3{margin:0 0 7px;font-size:20px}
+.resume-card p{margin:0;color:var(--muted);line-height:1.7}
+.resume-icon{width:58px;height:68px;border:1px solid #38506e;border-radius:12px;display:grid;place-items:center;color:var(--a);font:700 15px "Space Grotesk";background:#0b1728}
+.resume-preview{min-height:600px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#111}
+.resume-preview iframe{width:100%;height:100%;min-height:600px;border:0}
+.small-copy{font-size:13px;margin-top:18px!important}
+@media(max-width:900px){.hero-visual{min-height:460px}.mini-terminal{right:0;bottom:18px;width:min(290px,72%)}.resume-layout{grid-template-columns:1fr}.resume-preview{min-height:500px}.resume-preview iframe{min-height:500px}}
+@media(max-width:600px){.hero-visual{min-height:420px}.portrait-card{width:88%;border-radius:22px}.resume-copy{padding:20px}}
+
+.portrait-card img{object-position:center top}
+.portrait-card{isolation:isolate}
+.portrait-card:after{content:"";position:absolute;inset:0;border:1px solid rgba(99,230,255,.10);border-radius:inherit;pointer-events:none}
+.logo span{color:#63e6ff}
+
+.resume-card-link{color:inherit;text-decoration:none;cursor:pointer;transition:transform .25s ease,border-color .25s ease}
+.resume-card-link:hover{transform:translateY(-3px)}
+.resume-download-card{min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;background:linear-gradient(145deg,#101d31,#0b1728);border:1px solid var(--line)}
+.resume-download-icon{width:88px;height:104px;border:1px solid #3b5573;border-radius:14px;display:grid;place-items:center;color:var(--a);font-weight:800;letter-spacing:1px;margin-bottom:20px;background:#081426;box-shadow:0 0 35px rgba(99,230,255,.08)}
+.resume-download-card h3{font-size:24px;margin:0 0 10px}
+.resume-download-card p{color:var(--muted);max-width:360px;line-height:1.7;margin:0 0 24px}
+
+.cv-viewer{width:100%;height:850px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 25px 80px rgba(0,0,0,.28)}
+.cv-viewer iframe{width:100%;height:100%;border:0;display:block}
+@media(max-width:900px){.cv-viewer{height:700px}}
+@media(max-width:600px){.cv-viewer{height:620px;border-radius:14px}}
+
+.cv-viewer{background:#e9edf2;padding:28px;display:flex;justify-content:center;align-items:flex-start;overflow:auto}
+.cv-image{display:block;width:min(100%,900px);height:auto;box-shadow:0 18px 55px rgba(0,0,0,.28);transition:transform .25s ease;transform-origin:top center}
+.cv-image:hover{transform:scale(1.012)}
+@media(max-width:600px){.cv-viewer{padding:10px}.cv-image{width:100%}}
+</style></head><body>
+<nav><div class="wrap nav"><a class="logo" href="#home">SRIJAN<span>.B</span></a><div class="links"><a href="#about">ABOUT</a><a href="#profile">PROFILE</a><a href="#focus">FOCUS</a><a href="#skills">SKILLS</a><a href="#projects">PROJECTS</a><a href="#certificates">CERTIFICATES</a><a href="#journey">JOURNEY</a><a href="#achievements">ACHIEVEMENTS</a><a href="#education">EDUCATION</a><a href="#resume">RESUME</a></div><button onclick="location.href='mailto:srijansanyal2006@gmail.com'">CONTACT</button></div></nav>
+<main class="wrap">
+<section class="hero" id="home" style="border:0"><div><div class="eyebrow">Cybersecurity · CSE Student</div><h1>Building <span class="outline">secure</span><br>digital systems.</h1><p class="lead">I'm Srijan Sanyal — a Computer Science & Engineering student focused on cybersecurity, network security, cryptography and secure application development.</p><div class="buttons"><a class="btn primary" href="#projects">Explore my work ↓</a><a class="btn" href="https://github.com/srijan-sanyal" target="_blank">GitHub ↗</a><a class="btn" href="https://www.linkedin.com/in/srijan-sanyal/" target="_blank">LinkedIn ↗</a><a class="btn primary" href="#resume">View Resume ↗</a></div></div><div class="hero-visual">
+<div class="portrait-card">
+<img src="srijan-profile.png" alt="Srijan Sanyal professional portrait">
+<div class="portrait-glow"></div>
+
+</div>
+</div></section>
+
+<section id="about"><div class="head"><div><div class="k">01 / About</div><h2>Curious by nature.<br>Security-minded by design.</h2></div><p>Hands-on work across software security, networking and embedded systems.</p></div><div class="about"><p class="copy">I enjoy turning technical concepts into practical systems. My project work covers password-based file encryption, network vulnerability assessment and intelligent traffic control. I also work with Linux environments and security tools while developing programming and problem-solving skills.</p><div class="stats"><div class="stat"><b>8.56</b><span>CGPA · B.Tech (Hons.)</span></div><div class="stat"><b>04</b><span>Featured projects</span></div><div class="stat"><b>04</b><span>Certificates</span></div><div class="stat"><b>09+</b><span>Core technologies</span></div></div></div></section>
+
+
+
+<section id="profile"><div class="head"><div><div class="k">02 / PROFILE</div><h2>A broader view of my toolkit.</h2></div><p>Connecting software engineering fundamentals with practical cybersecurity work.</p></div>
+<div class="about">
+<div class="copy">
+<p><strong style="color:#f7fbff">Cybersecurity:</strong> Network security, ethical hacking fundamentals, vulnerability scanning, Linux security environments and operational security concepts.</p>
+<p><strong style="color:#f7fbff">Engineering:</strong> Python, C++, Java, C, web technologies and MySQL, with an emphasis on building working applications.</p>
+<p><strong style="color:#f7fbff">Security tooling:</strong> Nmap and Wireshark for network discovery and analysis, supported by Linux-based environments.</p>
+<p><strong style="color:#f7fbff">Cryptography:</strong> Applied use of AES-256-CBC, PBKDF2, random salts and IV generation in a secure file-protection project.</p>
+</div>
+<div class="stats">
+<div class="stat"><b>Python</b><span>Primary project language</span></div>
+<div class="stat"><b>Nmap</b><span>Network assessment</span></div>
+<div class="stat"><b>Linux</b><span>Security environments</span></div>
+<div class="stat"><b>AES-256</b><span>Applied cryptography</span></div>
+</div>
+</div></section>
+<section id="focus"><div class="head"><div><div class="k">02 / SECURITY FOCUS</div><h2>What I work on.</h2></div><p>A practical security-first approach across networking, cryptography, Linux and secure development.</p></div><div class="skills">
+<div class="skill"><small>01 · NETWORK SECURITY</small><h3>Network Defense & Analysis</h3><p>Host discovery, open-port analysis, service exposure assessment and packet-level investigation using Nmap, Wireshark and socket programming.</p></div>
+<div class="skill"><small>02 · APPLICATION SECURITY</small><h3>Secure Development</h3><p>Building applications with security controls including password validation, secure encryption workflows and defensive input handling.</p></div>
+<div class="skill"><small>03 · CRYPTOGRAPHY</small><h3>Applied Cryptography</h3><p>Hands-on work with AES-256-CBC, PBKDF2, random salts and IVs for password-based file protection.</p></div>
+<div class="skill"><small>04 · LINUX</small><h3>Security Environments</h3><p>Practical learning with Linux-based security environments including Kali Linux and Parrot OS.</p></div>
+<div class="skill"><small>05 · DSA & PROGRAMMING</small><h3>Problem Solving</h3><p>Programming practice across C, C++, Java and Python with an emphasis on algorithms and logical reasoning.</p></div>
+<div class="skill"><small>06 · EMBEDDED SYSTEMS</small><h3>Smart Systems</h3><p>Hardware-software integration using Arduino, IR sensors and intelligent traffic-control prototypes.</p></div>
+</div></section>
+<section id="skills"><div class="head"><div><div class="k">02 / Expertise</div><h2>Tools I build with.</h2></div><p>Programming, security, systems and development workflows.</p></div><div class="skills"><div class="skill"><small>01</small><h3>Programming</h3><p>C · C++ · Java · Python · HTML · CSS · JavaScript · MySQL</p></div><div class="skill"><small>02</small><h3>Security & Systems</h3><p>Nmap · Wireshark · Linux · Kali Linux · Parrot OS</p></div><div class="skill"><small>03</small><h3>Development</h3><p>Git · GitHub · VS Code · secure application development</p></div></div></section>
+
+<section id="projects"><div class="head"><div><div class="k">03 / Selected Work</div><h2>Projects with purpose.</h2></div><p>Filter the work by area and explore the technical stack.</p></div><div class="filters"><button class="filter active" data-f="all">ALL</button><button class="filter" data-f="security">SECURITY</button><button class="filter" data-f="python">PYTHON</button><button class="filter" data-f="hardware">HARDWARE</button></div><div class="projects">
+<article class="project feature" data-cat="security python"><div class="phead"><div><h3>Secure File Encryption & Decryption Tool</h3><div class="tags"><span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">PyCryptodome</span><span class="tag">AES-256-CBC</span><span class="tag">PBKDF2</span></div></div><span class="date">JUN — AUG 2026</span></div><ul><li>Built a desktop application for secure file encryption and decryption using password-based cryptographic operations.</li><li>Implemented PBKDF2 key derivation, random salt and IV generation, and password validation.</li><li>Designed a user-friendly Tkinter interface for secure encryption/decryption workflows.</li></ul></article>
+<article class="project" data-cat="security python"><div class="phead"><div><h3>Network Vulnerability Scanner</h3><div class="tags"><span class="tag">Python</span><span class="tag">Nmap</span><span class="tag">Socket Programming</span></div></div><span class="date">FEB — MAY 2026</span></div><ul><li>Identified active hosts, open ports and potentially exposed network services.</li><li>Integrated Nmap and socket programming for host discovery and port scanning.</li><li>Automated results to highlight accessible services and provide basic security recommendations.</li></ul></article>
+<article class="project" data-cat="hardware"><div class="phead"><div><h3>Smart Traffic Light System</h3><div class="tags"><span class="tag">Arduino</span><span class="tag">IR Sensors</span><span class="tag">Piezoelectric</span></div></div><span class="date">OCT 2025 — JAN 2026</span></div><ul><li>Built an intelligent traffic-control prototype using IR sensors and piezoelectric plates.</li><li>Implemented dynamic signal control to prioritize lanes with waiting vehicles.</li><li>Designed the system to improve traffic flow and reduce idle waiting time.</li></ul></article>
+</div></section>
+
+
+<section id="methodology"><div class="head"><div><div class="k">04 / PROJECT METHOD</div><h2>From concept to implementation.</h2></div><p>How the featured work demonstrates practical technical skills.</p></div>
+<div class="projects">
+<article class="project"><h3>Security Engineering</h3><div class="tags"><span class="tag">Threat Awareness</span><span class="tag">Validation</span><span class="tag">Secure Workflow</span></div><p class="copy">Projects are designed around practical security problems: protecting files, identifying exposed network services and improving system behavior.</p></article>
+<article class="project"><h3>Networking</h3><div class="tags"><span class="tag">Host Discovery</span><span class="tag">Port Scanning</span><span class="tag">Packet Analysis</span></div><p class="copy">Networking work combines Nmap, sockets and Wireshark-oriented learning to understand how systems communicate and where exposure can occur.</p></article>
+<article class="project"><h3>Secure Coding</h3><div class="tags"><span class="tag">PBKDF2</span><span class="tag">AES-256-CBC</span><span class="tag">Input Validation</span></div><p class="copy">The encryption project demonstrates translating cryptographic concepts into a usable desktop application rather than keeping them purely theoretical.</p></article>
+<article class="project"><h3>Hardware + Software</h3><div class="tags"><span class="tag">Arduino</span><span class="tag">IR Sensors</span><span class="tag">Automation</span></div><p class="copy">The traffic-light prototype combines physical sensing with software-controlled decision making for a practical embedded-system use case.</p></article>
+</div></section>
+<section id="certificates"><div class="head"><div><div class="k">04 / Credentials</div><h2>Proof of learning.</h2></div><p>Click a certificate image or button to open the full certificate.</p></div><div class="certs">
+<div class="cert"><img src="certificate-lpu.png" alt="LPU certificate" data-title="Network Security & Ethical Hacking Essentials"><div class="certbody"><div class="type">University Certification</div><h3>Network Security & Ethical Hacking Essentials</h3><p>Lovely Professional University · 13 Aug 2026 · Grade A</p><button class="view" data-src="certificate-lpu.png" data-title="Network Security & Ethical Hacking Essentials">View Certificate ↗</button></div></div>
+<div class="cert"><img src="certificate-scaler.png" alt="Scaler certificate" data-title="Computer Networking Course: Master Computer Networking"><div class="certbody"><div class="type">Course Completion</div><h3>Computer Networking Course: Master Computer Networking</h3><p>Scaler Topics · 16 Aug 2026 · 79 videos · 6 modules · 6 challenges</p><button class="view" data-src="certificate-scaler.png" data-title="Computer Networking Course: Master Computer Networking">View Certificate ↗</button></div></div>
+<div class="cert"><img src="certificate-redteam.png" alt="Red Team Leaders certificate" data-title="OpSec & Anonymity for Red Teams"><div class="certbody"><div class="type">Professional Course</div><h3>OpSec & Anonymity for Red Teams</h3><p>Red Team Leaders · 30 May 2026 · Verification QR included</p><button class="view" data-src="certificate-redteam.png" data-title="OpSec & Anonymity for Red Teams">View Certificate ↗</button></div></div>
+<div class="cert"><img src="certificate-cisco.png" alt="Cisco certificate" data-title="Ethical Hacker"><div class="certbody"><div class="type">Professional Certification</div><h3>Ethical Hacker</h3><p>Cisco Networking Academy · 27 Jan 2026</p><button class="view" data-src="certificate-cisco.png" data-title="Ethical Hacker">View Certificate ↗</button></div></div>
+</div></section>
+
+
+<section id="achievements"><div class="head"><div><div class="k">05 / ACHIEVEMENTS</div><h2>Consistency that compounds.</h2></div><p>Milestones from programming practice and cybersecurity learning.</p></div><div class="skills">
+<div class="skill"><small>CODING</small><h3>200+ Problems Solved</h3><p>More than 200 programming problems solved through regular practice across online coding platforms.</p></div>
+<div class="skill"><small>CYBERSECURITY</small><h3>Hands-on Security Learning</h3><p>Built practical experience through cybersecurity labs, ethical hacking exercises, network analysis and security-focused projects.</p></div>
+<div class="skill"><small>TRYHACKME</small><h3>Top 4% Ranking</h3><p>Ranked within the top 4% on TryHackMe, demonstrating sustained hands-on cybersecurity learning.</p></div>
+</div></section>
+<section id="education"><div class="head"><div><div class="k">06 / EDUCATION</div><h2>Foundation + specialization.</h2></div></div><div class="edu"><div class="ebox"><h3>Bachelor of Technology (Hons.) — Computer Science & Engineering</h3><p>Lovely Professional University · Phagwara, Punjab · Aug 2025 — Present<br>Specialization: Cyber Security & Blockchain<br><strong class="green">CGPA: 8.56</strong></p></div><div class="ebox"><h3>Intermediate — PCM</h3><p>K.V. RBNM Salboni · Salboni, West Bengal · Apr 2023 — Mar 2025<br><strong class="green">Percentage: 85%</strong></p></div></div></section>
+
+
+<section id="approach"><div class="head"><div><div class="k">07 / APPROACH</div><h2>Learn. Build. Test. Improve.</h2></div><p>A practical workflow for turning technical knowledge into demonstrable work.</p></div><div class="projects">
+<article class="project"><h3>01 · Learn</h3><p class="copy">Strengthen fundamentals in programming, networking, operating systems, cryptography and security concepts.</p></article>
+<article class="project"><h3>02 · Build</h3><p class="copy">Turn concepts into practical projects that demonstrate implementation rather than only theory.</p></article>
+<article class="project"><h3>03 · Test</h3><p class="copy">Use security tools and systematic testing to investigate exposed services, weaknesses and unexpected behavior.</p></article>
+<article class="project"><h3>04 · Improve</h3><p class="copy">Document lessons, strengthen controls and continuously expand technical depth.</p></article>
+</div></section>
+
+<section id="currently"><div class="head"><div><div class="k">08 / CURRENT DIRECTION</div><h2>What comes next.</h2></div><p>Areas aligned with the existing academic and project focus.</p></div>
+<div class="skills">
+<div class="skill"><small>01</small><h3>Deeper Network Security</h3><p>Continue strengthening practical knowledge of network discovery, traffic analysis and exposed-service assessment.</p></div>
+<div class="skill"><small>02</small><h3>Secure Applications</h3><p>Expand secure coding skills through more security-focused Python and web application projects.</p></div>
+<div class="skill"><small>03</small><h3>Cybersecurity Practice</h3><p>Continue hands-on learning through security labs, tooling and structured problem solving.</p></div>
+</div></section>
+
+<section id="journey"><div class="head"><div><div class="k">08 / JOURNEY</div><h2>A timeline of growth.</h2></div><p>Academic foundations, practical projects and security-focused learning.</p></div>
+<div class="projects">
+<article class="project"><div class="phead"><div><h3>2025 — Started B.Tech</h3><div class="tags"><span class="tag">CSE</span><span class="tag">Cyber Security</span><span class="tag">Blockchain</span></div></div></div><p class="copy">Began the Bachelor of Technology (Hons.) in Computer Science & Engineering at Lovely Professional University.</p></article>
+<article class="project"><div class="phead"><div><h3>2025 — 2026 · Built</h3><div class="tags"><span class="tag">Arduino</span><span class="tag">Python</span><span class="tag">Networking</span></div></div></div><p class="copy">Worked on the Smart Traffic Light System and developed a Network Vulnerability Scanner while strengthening programming fundamentals.</p></article>
+<article class="project"><div class="phead"><div><h3>2026 · Security Deep Dive</h3><div class="tags"><span class="tag">AES-256</span><span class="tag">PBKDF2</span><span class="tag">Nmap</span></div></div></div><p class="copy">Developed the Secure File Encryption & Decryption Tool and expanded practical cybersecurity and ethical-hacking knowledge.</p></article>
+<article class="project"><div class="phead"><div><h3>2026 · Credentials</h3><div class="tags"><span class="tag">LPU</span><span class="tag">Red Team Leaders</span><span class="tag">Cisco</span></div></div></div><p class="copy">Completed security and networking learning programs documented in the portfolio's certificate collection.</p></article>
+</div></section>
+
+<section id="toolkit"><div class="head"><div><div class="k">09 / TOOLKIT</div><h2>Technical toolkit.</h2></div><p>A visual snapshot of the technologies and security tools used across the work.</p></div>
+<div class="skills">
+<div class="skill"><small>LANGUAGES</small><h3>C / C++ / Java / Python</h3><p>Core programming languages used for problem solving, application development and security projects.</p></div>
+<div class="skill"><small>WEB</small><h3>HTML / CSS / JavaScript</h3><p>Frontend technologies for building structured, responsive interfaces.</p></div>
+<div class="skill"><small>DATABASE</small><h3>MySQL</h3><p>Database technology included in the development toolkit.</p></div>
+<div class="skill"><small>SECURITY TOOLS</small><h3>Nmap / Wireshark</h3><p>Tools used for network discovery, port scanning and traffic-oriented security learning.</p></div>
+<div class="skill"><small>OS</small><h3>Linux / Kali / Parrot</h3><p>Linux-based environments used for practical cybersecurity learning.</p></div>
+<div class="skill"><small>DEV TOOLS</small><h3>Git / GitHub / VS Code</h3><p>Development and version-control tools supporting project work.</p></div>
+</div></section>
+
+<section id="snapshot"><div class="head"><div><div class="k">10 / SNAPSHOT</div><h2>At a glance.</h2></div><p>Key signals from the current portfolio.</p></div>
+<div class="stats">
+<div class="stat"><b>8.56</b><span>Current CGPA</span></div>
+<div class="stat"><b>85%</b><span>Intermediate · PCM</span></div>
+<div class="stat"><b>200+</b><span>Programming problems</span></div>
+<div class="stat"><b>Top 4%</b><span>TryHackMe ranking</span></div>
+<div class="stat"><b>04</b><span>Featured projects</span></div>
+<div class="stat"><b>04</b><span>Featured certificates</span></div>
+</div></section>
+
+<section id="resume">
+<div class="head">
+<div><div class="k">11 / RESUME</div><h2>My CV.</h2></div>
+<p>View Srijan Sanyal's current CV directly below.</p>
+</div>
+<div class="cv-viewer">
+<img src="Srijan-CV-preview.png" alt="Srijan Sanyal CV" class="cv-image">
+</div>
+</section>
+<section id="contact"><div class="contact"><div><h2>Let's build something secure.</h2><p>Open to conversations, opportunities and technical collaboration.</p></div><div class="contactlinks"><a class="clink" href="mailto:srijansanyal2006@gmail.com">EMAIL ↗</a><a class="clink" href="https://github.com/srijan-sanyal" target="_blank">GITHUB ↗</a><a class="clink" href="https://www.linkedin.com/in/srijan-sanyal/" target="_blank">LINKEDIN ↗</a></div></div></section>
+<footer><span>© 2026 SRIJAN SANYAL</span><span>CYBERSECURITY · COMPUTER SCIENCE</span></footer>
+</main>
+<div class="modal" id="modal"><div class="box"><div class="mh"><span id="mt">Certificate</span><button class="close" id="close">CLOSE ✕</button></div><img id="mi" src="" alt=""></div></div>
+
+<script>
+const progress=document.createElement('div');progress.className='progress';document.body.appendChild(progress);
+document.querySelectorAll('section').forEach(s=>s.classList.add('reveal'));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
+window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;progress.style.width=(h>0?(scrollY/h)*100:0)+'%'},{passive:true});
+</script><script>
+const modal=document.getElementById('modal'),mi=document.getElementById('mi'),mt=document.getElementById('mt');
+function openCert(src,title){mi.src=src;mi.alt=title;mt.textContent=title;modal.classList.add('open')}
+function closeCert(){modal.classList.remove('open');mi.src=''}
+document.querySelectorAll('.view').forEach(b=>b.addEventListener('click',()=>openCert(b.closest('.cert').querySelector('img').src,b.dataset.title)));
+document.querySelectorAll('.cert img').forEach(i=>i.addEventListener('click',()=>openCert(i.src,i.dataset.title)));
+document.getElementById('close').addEventListener('click',closeCert);modal.addEventListener('click',e=>{if(e.target===modal)closeCert()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCert()});
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');let f=b.dataset.f;document.querySelectorAll('.project').forEach(p=>p.classList.toggle('hide',f!=='all'&&!p.dataset.cat.includes(f)))}));
+const nav=document.querySelectorAll('.links a'), secs=[...document.querySelectorAll('section[id]')];window.addEventListener('scroll',()=>{let c='home';secs.forEach(s=>{if(scrollY+120>=s.offsetTop)c=s.id});nav.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+c))},{passive:true});
+</script></body></html>
